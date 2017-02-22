@@ -1,0 +1,38 @@
+body {
+    line-height: 1;
+}
+
+
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.icon-person {
+    background-image: url('../images/icon/person.png');
+    background-size: 0.65625rem 0.625rem;
+}
+
+.icon-search-list {
+    background-image: url('../images/icon/search.png');
+    background-size: 0.59375rem 0.578125rem;
+}
+
+.icon-person-list {
+    background-image: url('../images/icon/person.png');
+    background-size: 0.734375rem 0.625rem;
+}
+
+.icon-setting {
+    background-image: url('../images/icon/setting.png');
+    background-size: 0.640625rem 0.640625rem;
+}
+
+.navbar-item .icon {
+    display: block;
+    width: 0.6875rem;
+    height: 0.6875rem;
+    margin: 0 auto;
+}

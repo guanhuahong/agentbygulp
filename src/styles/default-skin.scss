@@ -1,0 +1,22 @@
+@import 'variable';
+
+::-webkit-input-placeholder {
+
+  /* WebKit browsers */
+  color: $input-placeholder-color;
+}
+:-moz-placeholder {
+
+  /* Mozilla Firefox 4 to 18 */
+  color: $input-placeholder-color;
+}
+::-moz-placeholder {
+
+  /* Mozilla Firefox 19+ */
+  color: $input-placeholder-color;
+}
+:-ms-input-placeholder {
+
+  /* Internet Explorer 10+ */
+  color: $input-placeholder-color;
+}
