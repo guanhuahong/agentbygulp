@@ -1,0 +1,12 @@
+language: node_js
+os:
+- linux
+node_js:
+- 5
+install:
+- npm install -g sails gulp-cli bower
+- npm i
+script:
+- npm run cover
+after_success:
+- npm run coveralls
