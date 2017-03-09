@@ -1,0 +1,28 @@
+@import '../variable';
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 1.25rem;
+    font-size: 0.4375rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: white;
+    background-color: $main-background-color;
+
+    .icon {
+        display: block;
+        width: 1.89062rem;
+        height: 1.25rem;
+        margin-left: 0.3125rem;
+        background-size: contain;
+    }
+
+    span {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+}

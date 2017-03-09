@@ -40,16 +40,17 @@ function scripts() {
             debug: true
         }) // 初始化
         .require(paths.scripts.main) // 设置入口文件
-        .on('error', function(err) {
-            console.log(err);
-            this.emit('end');
-        }) // 错误回调
         .transform(babel) // 加入插件
         .bundle() // 打包并生产数据流
         .pipe(source('main.js')) // 输出源码到 main.js
         .pipe(buffer()) // 数据流转换
         .pipe(gulp.dest(paths.scripts.dest)) // 输出到目标目录
-        .pipe(server.reload()); // 刷新服务器
+        .pipe(server.reload()) // 刷新服务器
+        .on('error', function(err) {
+            console.log(err);
+            return false;
+            // this.emit('end');
+        }) // 错误回调
 }
 
 function cp() {

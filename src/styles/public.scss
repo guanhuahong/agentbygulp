@@ -2,6 +2,13 @@ body {
     line-height: 1;
 }
 
+.pull-left { float: left; }
+.pull-right { float: right; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.flex { display: flex; }
 
 .icon {
     display: inline-block;
@@ -30,9 +37,17 @@ body {
     background-size: 0.640625rem 0.640625rem;
 }
 
-.navbar-item .icon {
-    display: block;
-    width: 0.6875rem;
-    height: 0.6875rem;
-    margin: 0 auto;
+.icon-logo {
+    background-image: url('../images/logo.png');
+    background-size: 4.25rem 1.76562rem;
+}
+
+.icon-head-logo {
+    background-image: url('../images/logo--head.png');
+    background-size: 1.89062rem 0.765625rem;
+}
+
+.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
 }

@@ -7,14 +7,15 @@ import Agents from './pages/agents';
 import Record from './pages/record';
 import Players from './pages/players';
 import Preferences from './pages/preferences';
-console.log(App);
+
+let pageIndex = -1;
 render(
     <Router history={browserHistory}>
         <Route path='/' component={App}>
-            <IndexRoute component={Agents} />
-            <Route path='record' component={Record} />
-            <Route path='players' component={Players} />
-            <Route path='preferences' component={Preferences} />
+            <IndexRoute index={ ++ pageIndex } component={Agents} />
+            <Route index={ ++ pageIndex } path='record' component={Record} />
+            <Route index={ ++ pageIndex } path='players' component={Players} />
+            <Route index={ ++ pageIndex } path='prefenerces' component={Preferences} />
         </Route>
     </Router>
     , document.getElementById('wrapper'));

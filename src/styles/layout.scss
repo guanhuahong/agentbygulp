@@ -1,48 +1,26 @@
-@import './variable';
-// NavBar
-.navbar {
-    position: fixed;
+@import './modules/navbar';
+@import './modules/topbar';
+
+.page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 1.53rem;
+    left: 0;
+}
+
+.flex--agents {
+    justify-content: center;
+}
+
+.flex--agents li {
+    width: 33.3333%;
+}
+
+.agents-body {
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
     bottom: 0;
-
-    display: flex;
-    width:100%;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-
-    padding: 0.15625rem 0;
-    line-height: inherit;
-
-    color: $navbar-default-color;
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 1px;
-        line-height: 0;
-        font-size: 0;
-        background-color: $navbar-border-color;
-        transform: scaleY(0.5);
-    }
-    .navbar-item {
-        flex-grow: 1;
-        text-align: center;
-    }
-
-    .icon {
-        width: 0.6875rem;
-        height: 0.6875rem;
-        margin-bottom: 0.15625rem;
-    }
-
-    a, a:hover, a:focus {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .over, .active {
-        color: $navbar-primary-color;
-    }
-
+    left: 0;
 }

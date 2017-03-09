@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Url from 'url';
+import classNames from 'classnames';
+import url from 'url';
 import { Router, Route, Link } from 'react-router';
-import NavBar from './components/NavBar';
-import NavItem from './components/NavItem';
+import NavBar from './components/navbar';
+import NavBarItem from './components/navbaritem';
 import Icon from './components/icon';
 
 
@@ -16,46 +17,46 @@ class App extends Component {
             {
                 path: '/',
                 label: '代理',
-                icon: 'person',
+                icon: 'icon-person',
             }, {
                 path: '/record',
                 label: '分成',
-                icon: 'search-list'
+                icon: 'icon-search-list'
             }, {
                 path: '/players',
                 label: '玩家',
-                icon: 'person-list'
+                icon: 'icon-person-list'
             }, {
                 path: '/prefenerces',
                 label: '设置',
-                icon: 'setting'
+                icon: 'icon-setting'
             }
         ]
     }
 
-    menuItem(item) {
+    menuItem(item, index) {
         let {path, label, icon} = item;
         return (
-            <NavItem active={true}>
+            <NavBarItem key={path} order={index}>
                 <Link to={path}>
-                    <Icon type={icon}/>
+                    { icon && <i className={classNames('icon', icon)}></i> }
                     <span>
                         {label}
                     </span>
                 </Link>
-            </NavItem>
+            </NavBarItem>
         )
     }
 
     render() {
         let { children } = this.props;
         let menus = this.getMenuData();
+        const uri = url.parse(location.href);
+
         return (
             <div>
-                <NavBar>
-                    {
-                        menus.map((item) => menuItem(item))
-                    }
+                <NavBar classPrefix="navbar" defaultActiveIndex={this.props.children.props.route.index}>
+                    { menus.map((item, index) => this.menuItem(item, index)) }
                 </NavBar>
                 <div>
                 { children }
